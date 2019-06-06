@@ -7,33 +7,33 @@ $(document).on("click", "#end", function() {
 })
 
 var questions = [{
-    question: "What was the first full-lenfth CGI movie?",
-    answers: [" A Bug's Life ", " Monsters Inc ", " Lion King "],
-    correctAnswer: "Toy Story"
+    question: "In relation to the Subaru Impreza, the 22B name is generally considered to mean what?",
+    answers: [" EJ22 Engine Code/Bilstein suspension ", " EJ22 Engine code/Spec B ", " 2.2L Displacement/Bilstein suspension "],
+    correctAnswer: " 2.2L Displacement/Bilstein suspension "
 }, {
-    question: "",
-    answers: ["", "", ""],
-    correctAnswer: ""
+    question: "The Toyota Sera featured butterfly doors",
+    answers: [" True ", " False "],
+    correctAnswer: " True "
 }, {
-    question: "",
-    answers: ["", "", ""],
-    correctAnswer: ""
+    question: " Which of the following is a car produced by Honda?",
+    answers: [" Life-fun ", " Life-Dunk ", " Lifer "],
+    correctAnswer: " Life-Dunk "
 }, {
-    question: "",
-    answers: ["", "", ""],
-    correctAnswer: ""
+    question: " What JDM car held the record for world's most powerful production 1.0L engine?",
+    answers: [" Diahatsu Charade GTTI ", " Suzuki Cappucino ", " Honda Beat "],
+    correctAnswer: " Diahatsu Charade GTTI "
 }, {
-    question: "",
-    answers: ["", "", ""],
-    correctAnswer: ""
+    question: " Tuna, no _____.",
+    answers: [" crust", " mayo ", " celery "],
+    correctAnswer: " crust "
 }, {
-    question: "",
-    answers: ["", "", ""],
-    correctAnswer: ""
+    question: "The Mitsubishi Evo IX came with this motor.",
+    answers: [" K20A ", " 4G63 ", " 4B11 T"],
+    correctAnswer: " 4G63 "
 }, {
-    question: "",
-    answers: ["", "", ""],
-    correctAnswer: ""
+    question: "The Honda S2K's engine was a...",
+    answers: [" B18 ", " K20A ", " F20C "],
+    correctAnswer: " F20C "
 }];
 
 var game = {
@@ -45,6 +45,7 @@ var game = {
         $("#counter").html(game.counter);
         if (game.counter <= 0) {
             console.log("Time is up!");
+            clearInterval(timer);
             game.done();
         }
     },
@@ -62,71 +63,57 @@ var game = {
     },
 
     done: function() {
-        $.each($("input[name='question-0':checked"), function() {
+        $.each($("input[name='question-0']:checked"), function() {
             if ($(this).val() == questions[0].correctAnswer) {
                 game.correct++;
             } else {
                 game.incorrect++;
             }
         });
-        $.each($("input[name='question-1':checked"), function() {
+        $.each($("input[name='question-1']:checked"), function() {
             if ($(this).val() == questions[1].correctAnswer) {
                 game.correct++;
             } else {
                 game.incorrect++;
             }
         });
-        $.each($("input[name='question-2':checked"), function() {
+        $.each($("input[name='question-2']:checked"), function() {
             if ($(this).val() == questions[2].correctAnswer) {
                 game.correct++;
             } else {
                 game.incorrect++;
             }
         });
-        $.each($("input[name='question-3':checked"), function() {
+        $.each($("input[name='question-3']:checked"), function() {
             if ($(this).val() == questions[3].correctAnswer) {
                 game.correct++;
             } else {
                 game.incorrect++;
             }
         });
-        $.each($("input[name='question-0':checked"), function() {
-            if ($(this).val() == questions[0].correctAnswer) {
-                game.correct++;
-            } else {
-                game.incorrect++;
-            }
-        });
-        $.each($("input[name='question-4':checked"), function() {
+        $.each($("input[name='question-4']:checked"), function() {
             if ($(this).val() == questions[4].correctAnswer) {
                 game.correct++;
             } else {
                 game.incorrect++;
             }
         });
-        $.each($("input[name='question-5':checked"), function() {
+        $.each($("input[name='question-5']:checked"), function() {
             if ($(this).val() == questions[5].correctAnswer) {
                 game.correct++;
             } else {
                 game.incorrect++;
             }
         });
-        $.each($("input[name='question-6':checked"), function() {
+        $.each($("input[name='question-6']:checked"), function() {
             if ($(this).val() == questions[6].correctAnswer) {
                 game.correct++;
             } else {
                 game.incorrect++;
             }
         });
-        $.each($("input[name='question-7':checked"), function() {
-            if ($(this).val() == questions[7].correctAnswer) {
-                game.correct++;
-            } else {
-                game.incorrect++;
-            }
-        });
 
-        this.result();
+        this.results();
     },
     results: function() {
         clearInterval(timer);
